@@ -65,21 +65,26 @@ Nothing fancy. You are ready to go. When you become picky, go to the [knitr webs
 ![knitr logo](http://yihui.name/knitr/images/knit-logo.png)
   </textarea></div>
   <hr />
-  <div id="output">???</div>
+  <div id="output"></div>
   <script>
     var converter = new Showdown.converter();
     var input = document.getElementById('input');
-
-//    var editor = CodeMirror.fromTextArea(input, { mode: "text/html" });
-
     var output = document.getElementById('output');
     input.onkeyup = function () {
       output.innerHTML = converter.makeHtml(input.value);
     };
 
+    // render the boilerplate markdown when the page loads.
+    //
     output.innerHTML = converter.makeHtml(input.value);
 
-    var connection = sharejs.open('blag', 'text', function(error, doc) {
+    // XXX enable ShareJS collaboration
+    //
+    // this does not work yet. i think that i'm on the right track making the
+    // document name the page's "pathname". that way, to add a page to the
+    // wiki, you just type in a new url.
+    //
+    var connection = sharejs.open(window.location.pathname, 'text', function(error, doc) {
       if (error) {
         console.log(error);
       } else {
