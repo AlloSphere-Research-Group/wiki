@@ -3,6 +3,13 @@
 This project will provide a real-time collaborative wiki based on [Markdown][],
 and [Operational Transformation][] like the [ShareJS wiki example][].
 
+## TODO
+
+- make ShareJS collaboration work
+- enable persistent "pages" via nosql database
+- use browser editor (ACE, CodeMirror, etc) instead of text area
+- add secure login
+
 ## Installation and Deployment
 
     ./install_dependencies.sh
