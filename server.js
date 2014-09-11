@@ -7,18 +7,20 @@ var connect = require('connect'),
 
 var server = connect();
 
+// log all requests
+//
+server.use(connect.logger());
+
 // if the path begins with '/wiki', then serve the wiki page.
 //
 var wikiContent = fs.readFileSync('public/wiki.html');
-server.use('/wiki', function(request, response, next){
+server.use('/wiki', function(request, response, next) {
   response.end(wikiContent);
 
   // we _don't_ want to pass off handling to the "next" handler.
   //
   //next();
 });
-
-server.use(connect.logger());
 
 // default to serving "static" pages
 //
