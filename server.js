@@ -5,29 +5,24 @@ var connect = require('connect'),
     fs = require('fs'),
     sharejs = require('share').server;
 
-// XXX maybe, eventually we want to make this live with a file-watcher
-//
-// server a single page
-//
-var indexContent = fs.readFileSync('public/index.html');
-var server = connect(connect.logger(), function(request, response){
-  var fun = connect.static(__dirname + '/public');
-  // XXX - look at the request.
-  //
-  // if it starts 'wiki' then serve the index content. otherwise, serve files
-  // normally.
-  //
-  //console.log(request);
+var server = connect();
 
-  if (request.url.indexOf("/wiki") == -1) {
-    console.log("got here");
-    fun(request, response);
-  }
-  else {
-    response.writeHead(200, {'Content-Type': 'text/plain'});
-    response.end(indexContent);
-  }
+// if the path begins with '/wiki', then serve the wiki page.
+//
+var wikiContent = fs.readFileSync('public/wiki.html');
+server.use('/wiki', function(request, response, next){
+  response.end(wikiContent);
+
+  // we _don't_ want to pass off handling to the "next" handler.
+  //
+  //next();
 });
+
+server.use(connect.logger());
+
+// default to serving "static" pages
+//
+server.use(connect.static(__dirname + '/public'));
 
 // XXX enable persistance
 //
@@ -46,5 +41,5 @@ sharejs.attach(server, options);
 // XXX - eventually share on port 80
 //
 server.listen(8000, function(){
-    console.log('Server running at http://127.0.0.1:8000/');
+  console.log('Server running at http://127.0.0.1:8000/');
 });

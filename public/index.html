@@ -1,47 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>sharejs + showdown / wiki</title>
-  <script src="http://cdnjs.cloudflare.com/ajax/libs/showdown/0.3.1/showdown.min.js"></script>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js"></script>
-  <script src="http://karlyerkes.com/file/bcsocket.js"></script>
-  <script src="http://karlyerkes.com/file/share.js"></script>
+  <title>wiki</title>
 </head>
-<body>
-  <div><textarea id="input" rows=16 cols=64>
-# This is markdown boilerplate
-
-this should eventually become a better example of using markdown.
-  </textarea></div>
-  <hr />
-  <div id="output"></div>
-  <script>
-    var converter = new Showdown.converter();
-    var input = document.getElementById('input');
-    var output = document.getElementById('output');
-    input.onkeyup = function () {
-      output.innerHTML = converter.makeHtml(input.value);
-    };
-
-    // render the boilerplate markdown when the page loads.
-    //
-    output.innerHTML = converter.makeHtml(input.value);
-    //output.innerHTML = window.location.pathname;
-
-    // XXX enable ShareJS collaboration
-    //
-    // this does not work yet. i think that i'm on the right track making the
-    // document name the page's "pathname". that way, to add a page to the
-    // wiki, you just type in a new url.
-    //
-    var connection = sharejs.open(window.location.pathname, 'text', function(error, doc) {
-      if (error) {
-        console.log(error);
-      } else {
-        input.disabled = false;
-        doc.attach_textarea(input);
-      }
-    });
-  </script>
-</body>
+  <body>
+    <p>this is a wiki, but you have to goto /wiki/foo/bar to make a page.</p>
+  </body>
 </html>

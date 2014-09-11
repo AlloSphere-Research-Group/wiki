@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>sharejs + showdown / wiki</title>
+  <script src="http://cdnjs.cloudflare.com/ajax/libs/showdown/0.3.1/showdown.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js"></script>
+  <script src="/channel/bcsocket.js"></script>
+  <script src="/share/share.js"></script>
+</head>
+<body>
+  <div><textarea id="input" rows=16 cols=64>
+# This is markdown boilerplate
+
+this should eventually become a better example of using markdown.
+  </textarea></div>
+  <hr />
+  <div id="output"></div>
+  <script>
+    var converter = new Showdown.converter();
+    var input = document.getElementById('input');
+    var output = document.getElementById('output');
+    input.onkeyup = function () {
+      output.innerHTML = converter.makeHtml(input.value);
+    };
+
+    // render the boilerplate markdown when the page loads.
+    //
+    output.innerHTML = converter.makeHtml(input.value);
+
+    // ShareJS document names cannot have slashes in them, so we replace them
+    // with underscores. also, we replace multiple slashes (i.e. ////) with
+    // just a single slash and remove all stuff from the end of the string.
+    //
+    // XXX - this might be replaced by more formal, explicit filtering.
+    //
+    var documentName = window.location.pathname.replace(/\/+/g, '_');
+    documentName = documentName.replace(/_+$/, '');
+    console.log('trying to open ' + documentName);
+
+    // XXX enable ShareJS collaboration
+    //
+    var connection = sharejs.open(documentName, 'text', function(error, doc) {
+      if (error) {
+        console.log(error);
+      } else {
+        input.disabled = false;
+        doc.attach_textarea(input);
+      }
+    });
+  </script>
+</body>
+</html>
