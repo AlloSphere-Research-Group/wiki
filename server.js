@@ -5,6 +5,8 @@ var connect = require('connect'),
     fs = require('fs'),
     sharejs = require('share').server;
 
+// use the "use" call to set handlers (see below) instead of default.
+//
 var server = connect();
 
 // log all requests
