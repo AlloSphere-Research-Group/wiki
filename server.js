@@ -36,7 +36,10 @@ server.use(connect.static(__dirname + '/public'));
 //
 // See docs for options. {type: 'redis'} to enable persistance.
 //
-var options = {db: {type: 'none'}};
+var options = {
+  db: { type: 'none' },
+  browserChannel: { cors: "*" }
+};
 
 // Attach the sharejs REST and Socket.io interfaces to the server
 //

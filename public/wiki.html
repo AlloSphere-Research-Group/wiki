@@ -6,6 +6,7 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js"></script>
   <script src="/channel/bcsocket.js"></script>
   <script src="/share/share.js"></script>
+  <script src="/share/textarea.js"></script>
 </head>
 <body>
   <div><textarea id="input" rows=16 cols=64>
@@ -37,15 +38,16 @@ this should eventually become a better example of using markdown.
     documentName = documentName.replace(/_+$/, '');
     console.log('trying to open ' + documentName);
 
-    // XXX enable ShareJS collaboration
+    // enable ShareJS collaboration
     //
-    var connection = sharejs.open(documentName, 'text', function(error, doc) {
+    var options = { origin: "http://127.0.0.1:8000/channel" };
+    var connection = sharejs.open(documentName, 'text', options, function(error, doc) {
       if (error) {
         console.log(error);
-      } else {
-        input.disabled = false;
-        doc.attach_textarea(input);
+        return;
       }
+
+      doc.attach_textarea(input);
     });
   </script>
 </body>
