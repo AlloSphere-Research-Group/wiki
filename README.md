@@ -5,15 +5,20 @@ and [Operational Transformation][] like the [ShareJS wiki example][].
 
 ## TODO
 
-- make ShareJS collaboration work
 - enable persistent "pages" via nosql database
 - use browser editor (ACE, CodeMirror, etc) instead of text area
 - add secure login
+
+## DONE
+
+- make ShareJS collaboration work
 
 ## Installation and Deployment
 
     ./install_dependencies.sh
     node server.js
+
+You may need to use sudo.
 
 ## Links and References
 
