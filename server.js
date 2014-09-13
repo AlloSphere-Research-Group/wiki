@@ -3,7 +3,6 @@
 
 var connect = require('connect'),
     fs = require('fs'),
-    redis = require('redis'),
     sharejs = require('share').server;
 
 // use the "use" call to set handlers (see below) instead of default.
@@ -29,12 +28,19 @@ server.use('/wiki', function(request, response, next) {
 //
 server.use(connect.static(__dirname + '/public'));
 
-// enable persistance
+// default to no database
 //
 var options = {
-  db: { type: 'redis' }, //db: { type: 'none' },
+  db: {type: 'none'},
   browserChannel: { cors: "*" }
 };
+
+// try to enable persistance with redis
+//
+try {
+  require('redis');
+  options.db = {type: 'redis'};
+} catch (e) {}
 
 // Attach the sharejs REST and Socket.io interfaces to the server
 //
