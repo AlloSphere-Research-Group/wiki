@@ -13,6 +13,7 @@ and [Operational Transformation][] like the [ShareJS wiki example][].
 - add login/authentication system ([passport][]?)
 - investigate storing page versions
 - investigate storing author information (based on login/authentication)
+- try to use the latest [ShareJS][] version (different API)
 
 ## DONE
 
