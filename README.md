@@ -6,7 +6,11 @@ and [Operational Transformation][] like the [ShareJS wiki example][].
 ## TODO
 
 - use browser editor (ACE, CodeMirror, etc) instead of text area
-- add secure login
+- make editor side-by-side with rendered page (rather than up/down)
+- add some way to upload resources (i.e. images, pdfs, zips, etc); drag and drop?
+- add login/authentication system ([passport][]?)
+- investigate storing page versions
+- investigate storing author information (based on login/authentication)
 
 ## DONE
 
@@ -36,6 +40,7 @@ Now, start the wiki server.
 [ShareJS][]  
 [Showdown][]  
 [redis][]  
+[passport][]  
 
 [ShareJS wiki example]: http://sharejs.org/wiki/Main
 [Markdown]: http://daringfireball.net/projects/markdown/syntax
@@ -43,3 +48,4 @@ Now, start the wiki server.
 [ShareJS]: http://sharejs.org
 [Showdown]: https://github.com/coreyti/showdown
 [redis]: http://redis.io
+[passport]: http://passportjs.org
