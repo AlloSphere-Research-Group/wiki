@@ -3,6 +3,7 @@
 
 var connect = require('connect'),
     fs = require('fs'),
+    redis = require('redis'),
     sharejs = require('share').server;
 
 // use the "use" call to set handlers (see below) instead of default.
@@ -28,16 +29,10 @@ server.use('/wiki', function(request, response, next) {
 //
 server.use(connect.static(__dirname + '/public'));
 
-// XXX enable persistance
-//
-// we should save the contents of the ShareJS "context" at the url path. we
-// could use a nosql database with the url path as the key and the ShareJS
-// buffer contents as the value.
-//
-// See docs for options. {type: 'redis'} to enable persistance.
+// enable persistance
 //
 var options = {
-  db: { type: 'none' },
+  db: { type: 'redis' }, //db: { type: 'none' },
   browserChannel: { cors: "*" }
 };
 

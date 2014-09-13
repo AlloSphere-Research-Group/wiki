@@ -4,7 +4,7 @@ if [ `which apt-get 2>/dev/null` ]; then
   echo "install regis first, need to sudo"
   sudo npm install share@"<0.7"
   sudo npm install connect@"<2.0.0"
-  sudo npm install -g redis
+  sudo npm install redis
 elif [ `which pacman 2>/dev/null` ]; then
   echo "TBD - add support for Arch Linux"
 elif [ `which brew 2>/dev/null` ]; then
@@ -16,7 +16,7 @@ elif [ `which brew 2>/dev/null` ]; then
   brew install redis
   npm install share@"<0.7"
   npm install connect@"<2.0.0"
-  npm install -g redis
+  npm install redis
 elif [ `which port 2>/dev/null` ]; then
   echo "TBD - add support for Macports"
 else
