@@ -1,10 +1,11 @@
 # Wiki
 
-This project will provide a real-time collaborative wiki based on [Markdown][],
+This project will provide a real-time collaborative wiki based on [markdown][],
 and [Operational Transformation][] like the [ShareJS wiki example][].
 
 ## TODO
 
+- make remote document updates trigger local [markdown][] renderering
 - use browser editor ([ACE][], [CodeMirror][], etc) instead of text area
 - make editor side-by-side with rendered page (rather than up/down)
 - add some markdown-friendly css to make stuff look nice
@@ -38,7 +39,7 @@ Now, start the wiki server.
 ## Links and References
 
 [ShareJS wiki example][]  
-[Markdown][]  
+[markdown][]  
 [Operational Transformation][]  
 [ShareJS][]  
 [Showdown][]  
@@ -49,7 +50,7 @@ Now, start the wiki server.
 [dropzone][]  
 
 [ShareJS wiki example]: http://sharejs.org/wiki/Main
-[Markdown]: http://daringfireball.net/projects/markdown/syntax
+[markdown]: http://daringfireball.net/projects/markdown/syntax
 [Operational Transformation]: http://en.wikipedia.org/wiki/Operational_transformation
 [ShareJS]: http://sharejs.org
 [Showdown]: https://github.com/coreyti/showdown
