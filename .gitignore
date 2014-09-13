@@ -1,3 +1,5 @@
+appendonly.aof
+
 # Logs
 logs
 *.log

@@ -19,11 +19,12 @@ Run the install dependencies script. You may need to use sudo.
 
     ./install_dependencies.sh
 
-Start [redis][].
+Start [redis][]. This may create a file called _appendonly.aof_ that holds the
+contents of the wiki.
 
-    redis-server
+    redis-server --appendonly yes
 
-Start the wiki server.
+Now, start the wiki server.
 
     node server
 
