@@ -21,7 +21,7 @@ and [Operational Transformation][] like the [ShareJS wiki example][].
 - make [ShareJS][] collaboration work
 - enable persistent pages via [redis][] database
 
-## Installation and setup
+## Installation and use
 
 Run the install dependencies script. You may need to use sudo.
 
@@ -35,6 +35,10 @@ contents of the wiki.
 Now, start the wiki server.
 
     node server
+
+Goto your browser and hit this url:
+
+    http://127.0.0.1:8000/wiki/foo
 
 ## Links and References
 
