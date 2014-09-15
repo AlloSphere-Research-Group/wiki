@@ -46,7 +46,12 @@ Goto your browser and hit this url:
 
     http://127.0.0.1:8000/wiki/foo
 
-## Links and References
+## Useful Links
+
+[http://evanhahn.com/understanding-express]()  
+[https://www.npmjs.org/package/connect-basic-auth]()  
+
+## Reference Links
 
 [ShareJS wiki example][]  
 [markdown][]  
