@@ -27,6 +27,10 @@ Run the install dependencies script. You may need to use sudo.
 
     ./install_dependencies.sh
 
+If you are using ubuntu add the configuration to /etc/default/redis-server:
+
+    ULIMIT=10032
+
 Start [redis][]. This may create a file called _appendonly.aof_ that holds the
 contents of the wiki.
 
