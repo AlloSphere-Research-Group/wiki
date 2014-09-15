@@ -40,6 +40,8 @@ Now, start the wiki server.
 
     node server
 
+(nodejs server on ubuntu)
+
 Goto your browser and hit this url:
 
     http://127.0.0.1:8000/wiki/foo
