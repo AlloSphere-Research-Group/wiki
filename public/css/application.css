@@ -1,0 +1,19 @@
+*
+{
+    text-align: left;
+}
+
+#footer
+{
+
+    /* We can over-ride default settings here instead of changing the original
+       sticky-footer.css */
+    padding-top: 20px;
+    height: 100px;
+    margin-top: -120px;
+}
+
+#main
+{
+    padding-bottom: 120px;
+}

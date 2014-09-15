@@ -7,20 +7,31 @@
   <script src="/channel/bcsocket.js"></script>
   <script src="/share/share.js"></script>
   <script src="/share/textarea.js"></script>
-  <link rel="stylesheet" href="css/blueprint/screen.css" type="text/css" media="screen, projection">
-  <link rel="stylesheet" href="css/blueprint/print.css" type="text/css" media="print"> 
+  <link rel="stylesheet" href="/css/blueprint/screen.css" type="text/css" media="screen, projection">
+  <link rel="stylesheet" href="/css/blueprint/print.css" type="text/css" media="print"> 
   <!--[if lt IE 8]>
     <link rel="stylesheet" href="css/blueprint/ie.css" type="text/css" media="screen, projection">
   <![endif]-->
+  <link rel="stylesheet" href="/css/sticky-footer.css" type="text/css" media="screen, projection">
+  <link rel="stylesheet" href="/css/application.css" type="text/css" media="screen, projection">
 </head>
 <body>
-  <div><textarea id="input" rows=16 cols=64>
+  <div id="wrap">
+    <div id="main" class="main container">
+      <h1 class="quiet"> HEADER </h1>
+      <div class="span-12" id="output"></div>
+      <div class="span-12 last">
+        <textarea id="input" rows=16 cols=64>
 # This is markdown boilerplate
 
 this should eventually become a better example of using markdown.
-  </textarea></div>
-  <hr />
-  <div id="output"></div>
+        </textarea>
+      </div>
+    </div>
+  </div>
+  <div id="footer" class="container">
+    <h1 class="quiet"> FOOTER </h1>
+  </div>
   <script>
     var converter = new Showdown.converter();
     var input = document.getElementById('input');
