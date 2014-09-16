@@ -7,9 +7,6 @@ and [Operational Transformation][] like the [ShareJS wiki example][].
 
 - make remote document updates trigger local [markdown][] renderering
 - use browser editor ([ACE][], [CodeMirror][], etc) instead of text area
-- make editor side-by-side with rendered page (rather than up/down)
-- add some markdown-friendly css to make stuff look nice
-- create a better template page with a header and a footer
 - add some way to upload resources (i.e. images, pdfs, zips, etc). [dropzone][]?
 - add login/authentication system ([passport][]?)
 - investigate storing page versions
@@ -20,6 +17,9 @@ and [Operational Transformation][] like the [ShareJS wiki example][].
 
 - make [ShareJS][] collaboration work
 - enable persistent pages via [redis][] database
+- make editor side-by-side with rendered page (rather than up/down)
+- add some markdown-friendly css to make stuff look nice
+- create a better template page with a header and a footer
 
 ## Installation and use
 
