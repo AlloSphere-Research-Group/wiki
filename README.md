@@ -6,8 +6,11 @@ and [Operational Transformation][] like the [ShareJS wiki example][].
 ## TODO
 
 - make remote document updates trigger local [markdown][] renderering
+- add some way to upload resources (i.e. images, pdfs, zips, etc). [dropzone][]? or could just use
 - use browser editor ([ACE][], [CodeMirror][], etc) instead of text area
-- add some way to upload resources (i.e. images, pdfs, zips, etc). [dropzone][]?
+
+we should make an etherpad-based solution instead if you want these features
+
 - add login/authentication system ([passport][]?)
 - investigate storing page versions
 - investigate storing author information (based on login/authentication)
